@@ -1,0 +1,23 @@
+# Replace @mN with each member's GitHub username.
+/src/data_loader.py            @m1
+/src/preprocessing.py          @m1
+/data/README.md                @m1
+/src/weather.py                @m2
+/src/feature_engineering.py    @m2
+/src/training.py               @m3
+/src/models/lstm.py            @m3
+/src/models/xgboost_baseline.py @m4
+/src/models/baselines.py       @m4
+/src/models/gru.py             @m4
+/src/models/transformer.py     @m5
+/src/evaluation.py             @m6
+/src/backtesting.py            @m6
+/tests/                        @m6
+/scripts/evaluate_models.py    @m7
+/outputs/plots/                @m7
+/app.py                        @m8
+/src/forecasting.py            @m9
+/api/                          @m9
+/README.md                     @m10
+/reports/                      @m10
+/docs/                         @m10

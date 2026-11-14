@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+# data and large artifacts are NOT committed; see data/README.md
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+# data/raw and data/processed are never committed (large, licence).
+# models/*.pt and outputs/ ARE committed after the final run (small) so the dashboard works for everyone.
