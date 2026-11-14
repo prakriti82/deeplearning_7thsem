@@ -117,6 +117,20 @@ def make_plots(all_f: pd.DataFrame, t: pd.DataFrame) -> None:
             axes[0, j].legend(fontsize=7)
         fig.tight_layout(); fig.savefig(config.PLOTS_DIR / "residuals_and_hourly_error.png", dpi=130); plt.close(fig)
 
+    # 5. MAE by Day of Week (M7 Enhancement)
+    if len(nn):
+        fig, axes = plt.subplots(1, 2, figsize=(11, 4))
+        for j, tg in enumerate(config.TARGETS):
+            g = nn[nn["target"] == tg].assign(err=lambda d: d["y_pred"] - d["y_true"])
+            for m, gg in g.groupby("model"):
+                dow = gg.assign(dow=gg["timestamp"].dt.dayofweek).groupby("dow")["err"].apply(lambda e: e.abs().mean())
+                axes[j].plot(dow.index, dow.values, marker='o', label=m)
+            axes[j].set_title(f"MAE by Day of Week - {tg}")
+            axes[j].set_xticks(range(7))
+            axes[j].set_xticklabels(["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"])
+            axes[j].legend(fontsize=7)
+        fig.tight_layout(); fig.savefig(config.PLOTS_DIR / "mae_by_day_of_week.png", dpi=130); plt.close(fig)
+
 
 if __name__ == "__main__":
     main()
