@@ -1,6 +1,6 @@
 # Python 3.10-3.12 recommended
 pandas
-numpy
+numpy<2
 openpyxl
 requests
 holidays
@@ -10,3 +10,6 @@ matplotlib
 plotly
 streamlit
 pytest
+fastapi
+uvicorn
+httpx
