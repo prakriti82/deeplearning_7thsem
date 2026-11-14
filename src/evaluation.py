@@ -10,8 +10,8 @@ import pandas as pd
 from . import config
 
 
-def mae(y, p): return float(np.nanmean(np.abs(y - p)))
-def rmse(y, p): return float(np.sqrt(np.nanmean((y - p) ** 2)))
+def mae(y, p): return float(np.nanmean(np.abs(y - p))) """Calculate mean absolute error between actual and predicted values."""
+def rmse(y, p): return float(np.sqrt(np.nanmean((y - p) ** 2))) """Calculate root mean squared error."""
 
 
 def smape(y, p, frac: float = 0.0) -> float:
