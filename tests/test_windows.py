@@ -40,3 +40,20 @@ def test_window_shapes_and_no_future_in_history(fixture_df):
     assert np.allclose(y[0], expected_y, atol=1e-5)
     # target values must not appear in the history features
     assert not np.allclose(xh[0][-24:, :2], y[0])
+
+def test_scaler_is_independent_of_test_data(fixture_df):
+    _, _, splits = _setup(fixture_df)
+
+    scaler1 = fit_scaler(fixture_df, splits, True)
+
+    modified_df = fixture_df.copy()
+    test_start = pd.Timestamp(splits["test"][0])
+
+    modified_df.loc[
+        modified_df.index >= test_start, "demand_mw"
+    ] += 100000
+
+    scaler2 = fit_scaler(modified_df, splits, True)
+
+    assert np.allclose(scaler1.mean, scaler2.mean)
+    assert np.allclose(scaler1.std, scaler2.std)
