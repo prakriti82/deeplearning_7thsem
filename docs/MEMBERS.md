@@ -12,4 +12,4 @@ Each member adds their own row in their first commit (via a pull request).
 | M7 |  |  | Evaluation B | Ablations + error analysis |
 | M8 |  |  | Deployment A | Streamlit dashboard |
 | M9 |  |  | Deployment B | Inference module + API + packaging |
-| M10 |  |  | Coordinator | Repo, report, demo |
+| M10 | Kajal Rana | Kajal0904 | Coordinator | Repo, report, demo |
