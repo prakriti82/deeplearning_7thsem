@@ -3,7 +3,7 @@ Each member adds their own row in their first commit (via a pull request).
 
 | # | Name | GitHub username | Role | Area |
 |---|------|-----------------|------|------|
-| M1 |  |  | Data engineer A | Grid-India loading and cleaning |
+| M1 | Srija Gutta | srijagutta875 | Data engineer A | Grid-India loading and cleaning |
 | M2 | Poonam Mahawar | Poonam146 | Data engineer B | Weather and features |
 | M3 |  |  | Modelling A | Training framework + LSTM |
 | M4 |  |  | Modelling B | Baselines + GRU |
