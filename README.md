@@ -23,7 +23,7 @@ grids, NOT a single state. See `data/README.md`.
     python -m pytest -q                             # tests
 or `./run_all.sh` for steps 2-4 and the tests.
 
-## How it works
+## How it works let's see
 - **Task:** forecast origin 23:00 on day D-1; predict the 24 hours of day D for demand and solar.
 - **Inputs:** last 168 h of demand, solar, weather and calendar features + known covariates
   (weather, calendar) of the target day. Weather of the target day is taken as a known
