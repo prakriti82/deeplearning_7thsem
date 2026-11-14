@@ -8,7 +8,7 @@ from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-import numpy as np
+import numpy 
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
