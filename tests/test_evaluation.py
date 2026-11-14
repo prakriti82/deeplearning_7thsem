@@ -15,3 +15,12 @@ def test_solar_mape_ignores_night():
     m = compute_metrics(y, p, "solar_mw")
     assert np.isfinite(m["MAPE"]) and abs(m["MAPE"] - 5.0) < 1e-9   # only the two daylight points
     assert m["n_points"] == 4                                        # MAE/RMSE use all points
+
+def test_metrics_with_identical_predictions():
+    y = np.array([10.0, 20.0, 30.0])
+    p = np.array([10.0, 20.0, 30.0])
+
+    assert mae(y, p) == 0.0
+    assert rmse(y, p) == 0.0
+    assert mape(y, p) == 0.0
+    assert smape(y, p) == 0.0
